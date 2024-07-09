@@ -27,7 +27,7 @@ export const translate_word_to_punjabi = async (
       await tf.nextFrame();
       const pred_argmax = prediction.argMax(-1);
       const predToArray = await pred_argmax.data();
-
+      await tf.nextFrame();
       const pred_token =  predToArray[index];
       output = [...output, pred_token];
       decoding_tokens = [...decoding_tokens, pred_token];
