@@ -24,6 +24,7 @@ export const translate_word_to_punjabi = async (
       const y = tf.expandDims(tf.cast(decoder_input, "int32"), 0);
 
       const prediction = model!.predict([X, y]) as tf.Tensor<tf.Rank>;
+      await tf.nextFrame();
       const pred_argmax = prediction.argMax(-1);
       const predToArray = await pred_argmax.data();
 
