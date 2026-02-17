@@ -1,9 +1,9 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { sequence_padder } from "./Components/AiFunctions/AI_Assets/VocabTokens";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test("pads token sequence to expected size", () => {
+  const padded = sequence_padder([1, 2, 3], 50);
+  expect(padded).toHaveLength(50);
+  expect(padded[0]).toBe(1);
+  expect(padded[1]).toBe(2);
+  expect(padded[2]).toBe(3);
 });
