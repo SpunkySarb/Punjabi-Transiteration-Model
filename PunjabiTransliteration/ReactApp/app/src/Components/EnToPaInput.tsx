@@ -14,6 +14,8 @@ import Textarea from "@cloudscape-design/components/textarea";
 import Box from "@cloudscape-design/components/box";
 import Button from "@cloudscape-design/components/button";
 import StatusIndicator from "@cloudscape-design/components/status-indicator";
+import ExpandableSection from "@cloudscape-design/components/expandable-section";
+import ColumnLayout from "@cloudscape-design/components/column-layout";
 
 const englishRegex = /[a-zA-Z0-9]+/;
 
@@ -208,6 +210,30 @@ const EnToPaInput: React.FC<{ model: ModelType }> = ({ model }) => {
             </Box>
           </Container>
         </Grid>
+
+        <ExpandableSection headerText="About This Model" variant="footer">
+          <ColumnLayout columns={2}>
+            <SpaceBetween size="xs">
+              <Box variant="h4">How It Works</Box>
+              <Box variant="p">
+                This model runs <strong>entirely in your browser</strong> using
+                TensorFlow.js — no data is sent to any server. The neural
+                network is loaded into your device's memory and all
+                transliteration happens on your CPU, which is why it may feel
+                slow on older devices.
+              </Box>
+            </SpaceBetween>
+            <SpaceBetween size="xs">
+              <Box variant="h4">Model Details</Box>
+              <Box variant="p">
+                Encoder-Decoder LSTM architecture with ~8M parameters (30 MB).
+                Character-level tokenization with a 28-token English vocabulary
+                and 61-token Punjabi vocabulary. Trained on 514,000+ word pairs
+                from the Dakshina dataset with early stopping.
+              </Box>
+            </SpaceBetween>
+          </ColumnLayout>
+        </ExpandableSection>
 
         {suggestions.length > 0 && (
           <Container header={<Header variant="h2">Suggestions</Header>}>

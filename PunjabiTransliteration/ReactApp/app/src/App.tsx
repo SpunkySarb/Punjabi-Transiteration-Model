@@ -71,7 +71,7 @@ function App() {
           {
             type: "button",
             text: "GitHub",
-            href: "https://github.com/SarbZone",
+            href: "https://github.com/SpunkySarb/Punjabi-Transiteration-Model",
             external: true,
             externalIconAriaLabel: "(opens in new tab)",
           },
