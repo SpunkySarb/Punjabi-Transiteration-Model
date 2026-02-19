@@ -1,21 +1,23 @@
 /**author:Sarbjeet Singh, contact:https://www.sarbzone.com*/
 
-import { BounceLoader } from "react-spinners";
+import Box from "@cloudscape-design/components/box";
+import Spinner from "@cloudscape-design/components/spinner";
+import StatusIndicator from "@cloudscape-design/components/status-indicator";
 
+const Loading: React.FC = () => {
+  return (
+    <Box textAlign="center" padding={{ vertical: "xxxl" }}>
+      <Box padding={{ bottom: "l" }}>
+        <Spinner size="large" />
+      </Box>
+      <Box padding={{ bottom: "s" }}>
+        <StatusIndicator type="loading">Loading Model</StatusIndicator>
+      </Box>
+      <Box variant="small" color="text-body-secondary">
+        Developed by SarbZone
+      </Box>
+    </Box>
+  );
+};
 
-
-
-
-
-
-const Loading:React.FC = ()=>{
-return(<div style={{height:window.innerHeight, width:window.innerWidth, display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
- 
- <BounceLoader size={100}/>
- <div style={{marginTop:30, fontFamily:'Anton', fontSize:30, color:'gray'}}>Loading Model</div>
-<div style={{fontFamily:'monospace', textAlign:'center'}}>Developed by<br/>SarbZone</div>
-</div>);
-
-
-}
 export default Loading;
